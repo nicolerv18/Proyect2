@@ -1,95 +1,76 @@
-    Table artist {
-    artist_id int [pk]
-    name varchar(100)
-    country varchar(80)
-    start_date date
-    description text
-    }
+Table user {
+  user_id int [pk]
+  first_name varchar(100)
+  last_name varchar(100)
+  email varchar(150) [unique]
+  password varchar(255)
+  phone varchar(20)
+  address varchar(200)
+  created_at date
+}
 
-    Table album {
-    album_id int [pk]
-    title varchar(150)
-    release_date date
-    price decimal(10,2)
-    stock int
-    format varchar(50)
-    genre_id int
-    supplier_id int
-    }
+Table artist {
+  artist_id int [pk]
+  name varchar(100)
+  country varchar(80)
+  start_date date
+  description text
+}
 
-    Table artist_album {
-    artist_id int [pk]
-    album_id int [pk]
-    }
+Table album {
+  album_id int [pk]
+  title varchar(150)
+  release_date date
+  price decimal(10,2)
+  stock int
+  format varchar(50)
+  supplier_id int [ref: > supplier.supplier_id]
+}
 
-    Table genre {
-    genre_id int [pk]
-    name varchar(80)
-    description text
-    }
+Table artist_album {
+  artist_id int [pk, ref: > artist.artist_id]
+  album_id int [pk, ref: > album.album_id]
+}
 
-    Table customer {
-    customer_id int [pk]
-    first_name varchar(100)
-    last_name varchar(100)
-    email varchar(150)
-    phone varchar(20)
-    address varchar(200)
-    }
+Table genre {
+  genre_id int [pk]
+  name varchar(80)
+  description text
+}
 
-    Table employee {
-    employee_id int [pk]
-    first_name varchar(100)
-    last_name varchar(100)
-    position varchar(80)
-    salary decimal(10,2)
-    phone varchar(20)
-    email varchar(150)
-    branch_id int
-    }
+Table album_genre {
+  album_id int [pk, ref: > album.album_id]
+  genre_id int [pk, ref: > genre.genre_id]
+}
 
-    Table branch {
-    branch_id int [pk]
-    name varchar(100)
-    address varchar(200)
-    city varchar(80)
-    phone varchar(20)
-    }
+Table sale {
+  sale_id int [pk]
+  sale_date date
+  total decimal(10,2)
+  user_id int [ref: > user.user_id]
+  branch_id int [ref: > branch.branch_id]   // ← nuevo FK
+}
 
-    Table sale {
-    sale_id int [pk]
-    sale_date date
-    total decimal(10,2)
-    customer_id int
-    employee_id int
-    }
+Table sale_detail {
+  detail_id int [pk]
+  quantity int
+  subtotal decimal(10,2)
+  sale_id int [ref: > sale.sale_id]
+  album_id int [ref: > album.album_id]
+}
 
-    Table sale_detail {
-    detail_id int [pk]
-    quantity int
-    subtotal decimal(10,2)
-    sale_id int
-    album_id int
-    }
+Table supplier {
+  supplier_id int [pk]
+  company_name varchar(150)
+  phone varchar(20)
+  email varchar(150)
+  address varchar(200)
+}
 
-    Table supplier {
-    supplier_id int [pk]
-    company_name varchar(150)
-    phone varchar(20)
-    email varchar(150)
-    address varchar(200)
-    }
-
-    Ref: artist.artist_id < artist_album.artist_id
-    Ref: album.album_id < artist_album.album_id
-
-    Ref: genre.genre_id < album.genre_id
-    Ref: supplier.supplier_id < album.supplier_id
-
-    Ref: branch.branch_id < employee.branch_id
-
-    Ref: customer.customer_id < sale.customer_id
-    Ref: employee.employee_id < sale.employee_id
-
-    Ref: sale.sale_id < sale_detail.sale_id
-    Ref: album.album_id < sale_detail.album_id
+Table branch {
+  branch_id int [pk]
+  name varchar(100)
+  address varchar(200)
+  city varchar(80)
+  phone varchar(20)
+}
