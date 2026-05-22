@@ -9,20 +9,20 @@
       {
         "name": "artist",
         "schemaName": "public",
-        "x": 296.81298828125,
-        "y": 12
+        "x": 331.4241475165878,
+        "y": -253.35222080425652
       },
       {
         "name": "album",
         "schemaName": "public",
-        "x": 852.51513671875,
-        "y": 74
+        "x": 819.8268196631532,
+        "y": -52.90758386290531
       },
       {
         "name": "artist_album",
         "schemaName": "public",
-        "x": 1305.47705078125,
-        "y": 12
+        "x": 1368.9308427127028,
+        "y": -191.82127105254483
       },
       {
         "name": "genre",
@@ -37,16 +37,10 @@
         "y": 154
       },
       {
-        "name": "customer",
-        "schemaName": "public",
-        "x": 296.81298828125,
-        "y": 662
-      },
-      {
         "name": "branch",
         "schemaName": "public",
-        "x": 12,
-        "y": 12
+        "x": 1329.1468931225777,
+        "y": 858.2842179740987
       },
       {
         "name": "sale",
@@ -67,22 +61,10 @@
         "y": 424
       },
       {
-        "name": "user_account",
-        "schemaName": "public",
-        "x": 12,
-        "y": 936
-      },
-      {
-        "name": "employee",
-        "schemaName": "public",
-        "x": 337.05517578125,
-        "y": 936
-      },
-      {
         "name": "user",
         "schemaName": "public",
-        "x": 12,
-        "y": 666
+        "x": 611.9267600791886,
+        "y": 858.2842179740987
       }
     ],
     "tableGroupCollapseStates": [],
