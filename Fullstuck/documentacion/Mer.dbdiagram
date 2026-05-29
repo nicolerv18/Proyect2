@@ -65,6 +65,12 @@
         "schemaName": "public",
         "x": 611.9267600791886,
         "y": 858.2842179740987
+      },
+      {
+        "name": "contry",
+        "schemaName": "public",
+        "x": 296.81298828125,
+        "y": 1228.2842179740987
       }
     ],
     "tableGroupCollapseStates": [],
@@ -291,6 +297,21 @@
           "user_id"
         ],
         "secondTableName": "sale",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "country_id"
+        ],
+        "firstTableName": "contry",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "contry_id"
+        ],
+        "secondTableName": "artist",
         "secondSchemaName": "public",
         "secondRelation": "*",
         "checkPoints": []

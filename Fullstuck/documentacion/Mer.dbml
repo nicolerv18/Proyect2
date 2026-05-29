@@ -3,18 +3,24 @@
     first_name varchar(20)
     last_name varchar(20)
     email varchar(30) [unique]
-    password varchar(64) //segun el hash que se use
+    password VARBINARY(64) //segun el hash que se use
     phone varchar(20)
     address varchar(35)
     created_at date
+    status BIT
     }
 
+    table country{
+    country_id int [pk]
+    name varchar(50)
+    }
     Table artist {
     artist_id int [pk]
     name varchar(15)
-    country varchar(80)
+    country_id int [ref: > country.country_id]
     start_date date
-    description text
+    description varchar(20)
+    status  varchar(20)
     }
 
     Table album {
@@ -24,6 +30,7 @@
     price decimal(10,2)
     stock int
     format varchar(10)
+    status varchar(20)
     supplier_id int [ref: > supplier.supplier_id]
     }
 
@@ -35,7 +42,7 @@
     Table genre {
     genre_id int [pk]
     name varchar(20)
-    description text
+    description varchar(20)
     }
 
     Table album_genre {
@@ -49,6 +56,7 @@
     total decimal(10,2)
     user_id int [ref: > user.user_id]
     branch_id int [ref: > branch.branch_id]   // ← nuevo FK
+    status varchar(20)
     }
 
     Table sale_detail {
@@ -73,4 +81,5 @@
     address varchar(35)
     city varchar(30)
     phone varchar(20)
+    status BIT
     }
