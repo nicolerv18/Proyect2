@@ -5,7 +5,7 @@ services:
 
     environment:
       ACCEPT_EULA: "Y"
-      MSSQL_SA_PASSWORD: "123recordStore"
+      MSSQL_SA_PASSWORD: "AdminRecord*"
 
     ports:
       - "1433:1433"
@@ -18,8 +18,8 @@ services:
       /bin/bash -c "
       /opt/mssql/bin/sqlservr &
       sleep 25 &&
-      /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P '123recordStore' -C -i /init-scripts/01-schema.sql &&
-      /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P '123recordStore' -C -i /init-scripts/02-dml.sql &&
+      /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'AdminRecord*' -C -i /init-scripts/01-schema.sql &&
+      /opt/mssql-tools18/bin/sqlcmd -S localhost -U sa -P 'AdminRecord*' -C -i /init-scripts/02-dml.sql &&
       wait
       "
 
