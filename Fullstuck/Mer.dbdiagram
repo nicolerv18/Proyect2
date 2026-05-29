@@ -1,0 +1,301 @@
+{
+  "version": "2.0.0",
+  "darkMode": true,
+  "gridEnabling": false,
+  "currentViewName": null,
+  "defaultView": {
+    "detailLevel": "All",
+    "tablePositions": [
+      {
+        "name": "artist",
+        "schemaName": "public",
+        "x": 331.4241475165878,
+        "y": -253.35222080425652
+      },
+      {
+        "name": "album",
+        "schemaName": "public",
+        "x": 819.8268196631532,
+        "y": -52.90758386290531
+      },
+      {
+        "name": "artist_album",
+        "schemaName": "public",
+        "x": 1368.9308427127028,
+        "y": -191.82127105254483
+      },
+      {
+        "name": "genre",
+        "schemaName": "public",
+        "x": 296.81298828125,
+        "y": 250
+      },
+      {
+        "name": "album_genre",
+        "schemaName": "public",
+        "x": 1305.47705078125,
+        "y": 154
+      },
+      {
+        "name": "branch",
+        "schemaName": "public",
+        "x": 1329.1468931225777,
+        "y": 858.2842179740987
+      },
+      {
+        "name": "sale",
+        "schemaName": "public",
+        "x": 852.51513671875,
+        "y": 376
+      },
+      {
+        "name": "sale_detail",
+        "schemaName": "public",
+        "x": 1305.47705078125,
+        "y": 296
+      },
+      {
+        "name": "supplier",
+        "schemaName": "public",
+        "x": 296.81298828125,
+        "y": 424
+      },
+      {
+        "name": "user",
+        "schemaName": "public",
+        "x": 611.9267600791886,
+        "y": 858.2842179740987
+      }
+    ],
+    "tableGroupCollapseStates": [],
+    "stickyNoteLayouts": [],
+    "referencePaths": [
+      {
+        "firstFieldNames": [
+          "artist_id"
+        ],
+        "firstTableName": "artist",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "artist_id"
+        ],
+        "secondTableName": "artist_album",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "album_id"
+        ],
+        "firstTableName": "album",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "album_id"
+        ],
+        "secondTableName": "artist_album",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "album_id"
+        ],
+        "firstTableName": "album",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "album_id"
+        ],
+        "secondTableName": "album_genre",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "genre_id"
+        ],
+        "firstTableName": "genre",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "genre_id"
+        ],
+        "secondTableName": "album_genre",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "supplier_id"
+        ],
+        "firstTableName": "supplier",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "supplier_id"
+        ],
+        "secondTableName": "album",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "customer_id"
+        ],
+        "firstTableName": "customer",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "customer_id"
+        ],
+        "secondTableName": "sale",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "sale_id"
+        ],
+        "firstTableName": "sale",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "sale_id"
+        ],
+        "secondTableName": "sale_detail",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "album_id"
+        ],
+        "firstTableName": "album",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "album_id"
+        ],
+        "secondTableName": "sale_detail",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "branch_id"
+        ],
+        "firstTableName": "branch",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "branch_id"
+        ],
+        "secondTableName": "album",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "user_id"
+        ],
+        "firstTableName": "user_account",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "employee",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "branch_id"
+        ],
+        "firstTableName": "branch",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "branch_id"
+        ],
+        "secondTableName": "employee",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "user_id"
+        ],
+        "firstTableName": "user_account",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "customer",
+        "secondSchemaName": "public",
+        "secondRelation": "1",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "employee_id"
+        ],
+        "firstTableName": "employee",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "employee_id"
+        ],
+        "secondTableName": "sale",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "branch_id"
+        ],
+        "firstTableName": "branch",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "branch_id"
+        ],
+        "secondTableName": "sale",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "user_id"
+        ],
+        "firstTableName": "user",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "user_id"
+        ],
+        "secondTableName": "sale",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      }
+    ]
+  },
+  "views": {}
+}

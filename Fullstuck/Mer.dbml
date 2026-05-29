@@ -1,0 +1,76 @@
+    Table user {
+    user_id int [pk]
+    first_name varchar(20)
+    last_name varchar(20)
+    email varchar(30) [unique]
+    password varchar(64) //segun el hash que se use
+    phone varchar(20)
+    address varchar(35)
+    created_at date
+    }
+
+    Table artist {
+    artist_id int [pk]
+    name varchar(15)
+    country varchar(80)
+    start_date date
+    description text
+    }
+
+    Table album {
+    album_id int [pk]
+    title varchar(25)
+    release_date date
+    price decimal(10,2)
+    stock int
+    format varchar(10)
+    supplier_id int [ref: > supplier.supplier_id]
+    }
+
+    Table artist_album {
+    artist_id int [pk, ref: > artist.artist_id]
+    album_id int [pk, ref: > album.album_id]
+    }
+
+    Table genre {
+    genre_id int [pk]
+    name varchar(20)
+    description text
+    }
+
+    Table album_genre {
+    album_id int [pk, ref: > album.album_id]
+    genre_id int [pk, ref: > genre.genre_id]
+    }
+
+    Table sale {
+    sale_id int [pk]
+    sale_date date
+    total decimal(10,2)
+    user_id int [ref: > user.user_id]
+    branch_id int [ref: > branch.branch_id]   // ← nuevo FK
+    }
+
+    Table sale_detail {
+    detail_id int [pk]
+    quantity int
+    subtotal decimal(10,2)
+    sale_id int [ref: > sale.sale_id]
+    album_id int [ref: > album.album_id]
+    }
+
+    Table supplier {
+    supplier_id int [pk]
+    company_name varchar(50)
+    phone varchar(20)
+    email varchar(30)
+    address varchar(35)
+    }
+
+    Table branch {
+    branch_id int [pk]
+    name varchar(30)
+    address varchar(35)
+    city varchar(30)
+    phone varchar(20)
+    }
