@@ -21,3 +21,4 @@ public interface genreRepository extends JpaRepository<genre, Long> {
     List<genre> findByName(String name);
     
 }
+
