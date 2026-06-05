@@ -71,6 +71,12 @@
         "schemaName": "public",
         "x": 296.81298828125,
         "y": 1228.2842179740987
+      },
+      {
+        "name": "country",
+        "schemaName": "public",
+        "x": 296.81298828125,
+        "y": 1228.2842179740987
       }
     ],
     "tableGroupCollapseStates": [],
@@ -310,6 +316,21 @@
         "firstRelation": "1",
         "secondFieldNames": [
           "contry_id"
+        ],
+        "secondTableName": "artist",
+        "secondSchemaName": "public",
+        "secondRelation": "*",
+        "checkPoints": []
+      },
+      {
+        "firstFieldNames": [
+          "country_id"
+        ],
+        "firstTableName": "country",
+        "firstSchemaName": "public",
+        "firstRelation": "1",
+        "secondFieldNames": [
+          "country_id"
         ],
         "secondTableName": "artist",
         "secondSchemaName": "public",
