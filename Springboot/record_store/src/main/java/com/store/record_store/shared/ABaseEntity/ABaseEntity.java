@@ -31,5 +31,7 @@ public class ABaseEntity {
     protected java.time.LocalDateTime createdAt;
     @Column(name = "updated_at")
     protected java.time.LocalDateTime updatedAt;
+
+    
     
 }

@@ -20,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @NoArgsConstructor
 @Builder
 
-public class genre extends ABaseEntity {
+public class Genre extends ABaseEntity {
 
     @Column(name ="name" , nullable = false, length = 20)
     private String name;
