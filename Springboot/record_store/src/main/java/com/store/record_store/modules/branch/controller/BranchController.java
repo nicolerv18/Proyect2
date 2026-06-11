@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.store.record_store.modules.branch.dto.BranchRequestDto;
 import com.store.record_store.modules.branch.dto.BranchResponseDto;
-import com.store.record_store.modules.branch.services.IBranchService;
+import com.store.record_store.modules.branch.services.IbranchService;
 
 import lombok.AllArgsConstructor;
 

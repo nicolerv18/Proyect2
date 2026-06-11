@@ -13,6 +13,7 @@ import com.store.record_store.modules.branch.repository.BranchRepository;
 import com.store.record_store.modules.branch.services.IbranchService;
 
 @Service
+
 public class BranchService implements IbranchService {
 
     @Autowired

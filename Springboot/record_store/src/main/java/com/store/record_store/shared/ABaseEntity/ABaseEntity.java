@@ -24,8 +24,7 @@ public class ABaseEntity {
     @GeneratedValue(strategy =GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "status")
-    private String status;
+    
 
     @Column(name = "created_at", nullable = false, updatable = false)
     protected java.time.LocalDateTime createdAt;
