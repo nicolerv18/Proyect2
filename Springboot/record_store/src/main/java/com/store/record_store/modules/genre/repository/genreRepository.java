@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.store.record_store.modules.genre.model.Genre;
+import com.store.record_store.modules.genre.model.genre;
 import org.springframework.data.jpa.repository.Query;
 
 
-public interface genreRepository extends JpaRepository<Genre, Long> {
+public interface genreRepository extends JpaRepository<genre, Long> {
 
 
     @Query("""
@@ -18,7 +18,7 @@ public interface genreRepository extends JpaRepository<Genre, Long> {
         g.name like %?1%
             """)
     
-    List<Genre> findByName(String name);
+    List<genre> findByName(String name);
     
 }
 
