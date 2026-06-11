@@ -4,13 +4,13 @@ import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
 
-import lombok.data;
+import lombok.Data;
 
-@data
+@Data
 public class SupplierRequestDTO {
     @NotBlank( message = "Por favor digite el nombre de la disquera") 
     @Size(max = 50 )
-    private String company_name;
+    private String companyName;
 
     @NotBlank ( message = "El teléfono es obligatorio")
     @Size(max = 20)

@@ -1,8 +1,8 @@
 package com.store.record_store.modules.supplier.dto;
 
-import lombok.data;
+import lombok.Data;
 
-@data
+@Data
 public class SupplierResponseDTO {
     private Long id;
     private String companyName;

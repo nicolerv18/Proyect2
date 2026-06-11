@@ -10,12 +10,10 @@ import org.springframework.data.jpa.repository.Query;
 public interface SupplierRepository extends JpaRepository<Supplier, Long>{
 
     @Query("""
-        SELECT S
+        SELECT s
         FROM Supplier s
-        WHERE
-        s.companyName like %?1%
-        """;)
-
-        List<supplier> findByName (String companyName)
+        WHERE s.companyName LIKE %?1%
+        """)
+    List<Supplier> findByName(String companyName);
 
 }

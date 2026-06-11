@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -18,19 +17,17 @@ import lombok.experimental.SuperBuilder;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-@Builder
-
 public class Supplier extends ABaseEntity {
     @Column(name = "company_name", length = 50, nullable = false)
     private String companyName;
 
-    @Column(name = "phone", length= 20),
+    @Column(name = "phone", length = 20)
     private String phone;
 
-    @Column(name= "email", length=30),
+    @Column(name = "email", length = 30)
     private String email;
 
-    @Column(name="address, length=35"),
+    @Column(name = "address", length = 35)
     private String address;
 
 }
