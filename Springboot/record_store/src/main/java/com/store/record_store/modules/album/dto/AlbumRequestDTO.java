@@ -1,23 +1,29 @@
-package com.store.record_store.modules.Album.dto;
-import jakarta.validation.constraints.Email;
-import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Size;
+package com.store.record_store.modules.album.dto;
 
+import java.time.LocalDate;
+
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 import lombok.Data;
 
 @Data
 public class AlbumRequestDTO {
-    @NotBlank( message = "Por favor digite el título del álbum") 
-    @Size(max = 25 )
+    
+
+    private Long supplierId;
+
+    @NotBlank(message = "Por favor digite el título del álbum")
+    @Size(max = 25)
     private String title;
 
-    @NotBlank ( message = "La fecha de lanzamiento es obligatoria")
-    private String releaseDate;
+    @NotNull(message = "La fecha de lanzamiento es obligatoria")
+    private LocalDate releaseDate;
 
-    @NotBlank ( message = "El precio es obligatorio ")
+    @NotNull(message = "El precio es obligatorio")
     private Float price;
 
-    @NotBlank(message = "El stock es obligatorio")
+    @NotNull(message = "El stock es obligatorio")
     private Integer stock;
 
     @NotBlank(message = "El formato es obligatorio")

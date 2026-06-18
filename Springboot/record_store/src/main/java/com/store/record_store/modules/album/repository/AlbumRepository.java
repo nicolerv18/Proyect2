@@ -1,11 +1,10 @@
-package com.store.record_store.modules.Album.Repository;
+package com.store.record_store.modules.album.repository;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.store.record_store.modules.Album.model.Album;
 import org.springframework.data.jpa.repository.Query;
+import com.store.record_store.modules.album.model.Album;
 
 public interface AlbumRepository extends JpaRepository<Album, Long> {
     @Query("""
