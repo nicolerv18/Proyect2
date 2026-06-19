@@ -1,16 +1,26 @@
 package com.store.record_store.modules.user.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.time.LocalDateTime;
+import java.util.UUID;
 
 @Data
-public class userResponseDTO {
-    private int id;
-    private String first_Name;
-    private String last_Name;
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class UserResponseDTO {
+
+    private UUID id;
+    private String firstName;
+    private String lastName;
     private String email;
     private String phone;
     private String address;
-    private boolean status;
-    private java.time.LocalDateTime createdAt;
-    private java.time.LocalDateTime updatedAt;
-    
+    private Boolean status;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }

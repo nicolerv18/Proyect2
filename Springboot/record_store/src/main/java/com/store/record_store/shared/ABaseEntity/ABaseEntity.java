@@ -1,5 +1,7 @@
 package com.store.record_store.shared.ABaseEntity;
 
+import java.util.UUID;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
@@ -22,7 +24,7 @@ public class ABaseEntity {
 
     @Id
     @GeneratedValue(strategy =GenerationType.IDENTITY)
-    private Long id;
+    private UUID id;
 
     
 

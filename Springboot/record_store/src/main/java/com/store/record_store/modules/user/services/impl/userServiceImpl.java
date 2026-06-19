@@ -1,66 +1,69 @@
 package com.store.record_store.modules.user.services.impl;
 
-import org.springframework.data.convert.ReadingConverter;
+import com.store.record_store.modules.user.dto.LoginRequestDTO;
+import com.store.record_store.modules.user.dto.LoginResponseDTO;
+import com.store.record_store.modules.user.dto.UserRequestDTO;
+import com.store.record_store.modules.user.dto.UserResponseDTO;
+import com.store.record_store.modules.user.mapper.UserMapper;
+import com.store.record_store.modules.user.model.User;
+import com.store.record_store.modules.user.repository.UserRepository;
+import com.store.record_store.modules.user.services.UserService;
+import com.store.record_store.shared.service.impl.ABaseServiceImpl;
 import org.springframework.stereotype.Service;
-import com.store.record_store.modules.user.services.userService;
-import com.store.record_store.modules.user.dto.userRequestDTO;
-import com.store.record_store.modules.user.dto.userResponseDTO;
-import com.store.record_store.modules.user.dto.loginRequestDTO;
-import com.store.record_store.modules.user.mapper.userMapper;
 
-import com.store.record_store.modules.user.dto.loginResponseDTO;
+import java.util.UUID;
 
 @Service
-public class userServiceImpl implements userService {
-    
-    @Override
-    public userResponseDTO createUser(userRequestDTO dto) {
-        User user = userMapper.toEntity(dto);
-        user.setStatus("Active");
-        User usersaved = userRepository.save(user);
-        //recibe datos del usuario
-        //validar datos
-        //encriptar contraseña
-        //guardar en la base de datos
-        return null;
+public class UserServiceImpl 
+    extends ABaseServiceImpl<User, UUID, UserRequestDTO, UserResponseDTO, UserRepository>
+    implements UserService {
 
+    private final UserMapper userMapper;
+    private final UserRepository userRepository;
+
+    public UserServiceImpl(UserMapper userMapper, UserRepository userRepository) {
+        super();
+        this.userMapper = userMapper;
+        this.userRepository = userRepository;
+    }
+
+
+    @Override
+    protected UserResponseDTO toResponse(User entity) {
+        return userMapper.toResponse(entity);
+    }
+
+    @Override
+    protected User toEntity(UserRequestDTO dto) {
+        return userMapper.toEntity(dto);
+    }
+
+    @Override
+    public LoginResponseDTO login(LoginRequestDTO loginRequestDTO) {
+        // Buscar usuario por email
+        User user = userRepository.findByEmail(loginRequestDTO.getEmail())
+                .orElseThrow(() -> new RuntimeException("Usuario o contraseña incorrectos"));
+
+        if (!user.getPassword().equals(loginRequestDTO.getPassword())) {
+            throw new RuntimeException("Usuario o contraseña incorrectos");
         }
-    
-    @Override
-    public java.util.List<userResponseDTO> getAll() {
 
-        return null; 
-    }
-
-    @Override
-    public userResponseDTO getById(int id) {
-        // obtener usuario por id de la base de datos
-        // convertir a DTO
-        return null;
-    }
-
-    @Override
-    public userResponseDTO updateUser(int id, userRequestDTO dto) {
-        //obtener usuario
-        //actualizar datos
-        //guardar cambios
-        return null;
-
-    }
-
-    @Override
-    public void deleteUser(int id) {
-        //obtener usuario
-        //eliminar usuario
+        LoginResponseDTO response = new LoginResponseDTO();
+        response.setId(user.getId());
+        response.setEmail(user.getEmail());
+        response.setFirstName(user.getFirstName());
+        response.setLastName(user.getLastName());
         
+        return response;
     }
 
-    @Override
-    public loginResponseDTO login(loginRequestDTO dto) {
-        //obtener usuario por email
-        //comparar contraseña
-        //generar token
-        return null;
-    }  
-    
+    public UserResponseDTO getByEmail(String email) {
+        User user = userRepository.findByEmail(email)
+                .orElseThrow(() -> new RuntimeException("Usuario no encontrado"));
+        return toResponse(user);
+    }
+
+    public boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
+    }
 }
