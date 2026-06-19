@@ -7,9 +7,9 @@ import org.springframework.web.bind.annotation.*;
 
 import lombok.RequiredArgsConstructor;
 
-import com.store.record_store.modules.Album.dto.AlbumRequestDTO;
-import com.store.record_store.modules.Album.dto.AlbumResponseDTO;
-import com.store.record_store.modules.Album.Service.AlbumService;
+import com.store.record_store.modules.album.dto.AlbumRequestDTO;
+import com.store.record_store.modules.album.dto.AlbumResponseDTO;
+import com.store.record_store.modules.album.service.AlbumService;
 
 import jakarta.validation.Valid;
 

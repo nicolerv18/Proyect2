@@ -1,4 +1,4 @@
-package com.store.record_store.modules.Album.dto;
+package com.store.record_store.modules.album.dto;
 
 import java.time.LocalDate;
 import lombok.Data;
