@@ -1,6 +1,7 @@
 package com.store.record_store.modules.artist.services.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class ArtistService implements IArtistService {
     }
 
     @Override
-    public ArtistResponseDto findById(Long id) {
+    public ArtistResponseDto findById(UUID id) {
         var artist = data.findById(id);
         if (artist.isEmpty())
             return null;

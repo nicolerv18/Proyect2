@@ -1,7 +1,7 @@
 package com.store.record_store.modules.artist.model;
 
 import java.time.LocalDate;
-
+import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -27,7 +27,7 @@ public class Artist {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "artist_id")
-    private Long artistId;
+    private UUID artistId;
 
     @Column(name = "name", length = 15)
     private String name;
