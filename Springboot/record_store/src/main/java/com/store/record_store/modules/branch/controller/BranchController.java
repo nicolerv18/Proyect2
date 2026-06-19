@@ -11,6 +11,7 @@ import com.store.record_store.modules.branch.services.IbranchService;
 import lombok.AllArgsConstructor;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -40,7 +41,7 @@ public class BranchController {
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<BranchResponseDto> getById(@PathVariable Long id) {
+    public ResponseEntity<BranchResponseDto> getById(@PathVariable UUID id) {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(service.findById(id));
     }

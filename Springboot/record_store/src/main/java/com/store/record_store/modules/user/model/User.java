@@ -36,4 +36,7 @@ public class User extends ABaseEntity {
 
     @Column(name = "address", nullable = false, length = 35)
     private String address;
+
+    @Column(name = "status", nullable = (false))
+    private boolean status;
 }

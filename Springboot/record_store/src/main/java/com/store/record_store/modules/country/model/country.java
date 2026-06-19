@@ -6,7 +6,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.PrePersist;
 import jakarta.persistence.PreUpdate;
 import jakarta.persistence.Table;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
@@ -17,7 +16,6 @@ import lombok.NoArgsConstructor;
 @Setter
 @SuperBuilder
 @NoArgsConstructor
-@Builder
 public class country extends ABaseEntity {
 
     @Column(name ="name" , nullable = false, length = 20)

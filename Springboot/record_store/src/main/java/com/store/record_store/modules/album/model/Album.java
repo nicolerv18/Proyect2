@@ -28,7 +28,7 @@ public class Album extends ABaseEntity {
     @Column(name = "release_date", length = 20)
     private LocalDate releaseDate;
 
-    @Column(name = "price", precision = 10, scale = 2)
+    @Column(name = "price", nullable = (false))
     private float price;
 
     @Column(name = "stock", nullable = false)

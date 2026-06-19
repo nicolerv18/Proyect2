@@ -11,7 +11,7 @@ import com.store.record_store.modules.album.model.Album;
 
 @Mapper(componentModel = "spring")
 public interface AlbumMapper {
-     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "status", ignore = true)
     @Mapping(target = "supplier", ignore = true)
     @Mapping(target = "createdAt", ignore = true)

@@ -1,6 +1,7 @@
 package com.store.record_store.modules.album.dto;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -11,7 +12,7 @@ import lombok.Data;
 public class AlbumRequestDTO {
     
 
-    private Long supplierId;
+    private UUID supplierId;
 
     @NotBlank(message = "Por favor digite el título del álbum")
     @Size(max = 25)

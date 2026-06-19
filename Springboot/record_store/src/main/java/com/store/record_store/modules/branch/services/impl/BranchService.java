@@ -1,6 +1,7 @@
 package com.store.record_store.modules.branch.services.impl;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -34,7 +35,7 @@ public class BranchService implements IbranchService {
     }
 
     @Override
-    public BranchResponseDto findById(Long id) {
+    public BranchResponseDto findById(UUID id) {
         var branch = data.findById(id);
         if (branch.isEmpty())
             return null;
