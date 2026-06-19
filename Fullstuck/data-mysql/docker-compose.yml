@@ -12,15 +12,6 @@ services:
 
     volumes:
       - sqlserver_data:/var/opt/mssql
-      - ./init-scripts:/init-scripts
-
-    command: >
-      /bin/bash -c "
-      /opt/mssql/bin/sqlservr &
-      sleep 25 &&
-      /opt/mssql-tools18/bin/sqlcmd -S localhost -U record_admin -P 'AdminRecord*' -C -i /init-scripts/01-schema.sql &&
-      wait
-      "
 
 volumes:
   sqlserver_data:
