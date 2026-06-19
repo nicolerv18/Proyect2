@@ -1,6 +1,7 @@
 package com.store.record_store.modules.artist.dto;
 
 import java.time.LocalDate;
+import java.util.UUID;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -21,7 +22,7 @@ public class ArtistRequestDto {
     private String name;
 
     @NotNull
-    private Long countryId;
+    private UUID countryId;
 
     @NotNull
     private LocalDate startDate;

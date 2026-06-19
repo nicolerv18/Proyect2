@@ -3,6 +3,7 @@ package com.store.record_store.shared.service.impl;
 import com.store.record_store.shared.ABaseEntity.ABaseEntity;
 import com.store.record_store.shared.repository.ABaseRepository;
 import com.store.record_store.shared.service.ABaseService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -13,7 +14,7 @@ import java.util.UUID;
 
 public abstract class ABaseServiceImpl<
         T extends ABaseEntity, 
-        ID extends UUID, 
+        ID extends UUID,  
         REQ, 
         RES, 
         R extends ABaseRepository<T, ID>>

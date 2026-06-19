@@ -1,13 +1,14 @@
 package com.store.record_store.modules.supplier.repository;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 import com.store.record_store.modules.supplier.model.Supplier;
 
-public interface SupplierRepository extends JpaRepository<Supplier, Long>{
+public interface SupplierRepository extends JpaRepository<Supplier, UUID>{
 
     @Query("""
         SELECT s

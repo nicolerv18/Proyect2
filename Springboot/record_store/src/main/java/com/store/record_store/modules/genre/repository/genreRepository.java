@@ -1,14 +1,14 @@
 package com.store.record_store.modules.genre.repository;
 
 import java.util.List;
-import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.store.record_store.modules.genre.model.genre;
 import org.springframework.data.jpa.repository.Query;
 
 
-public interface genreRepository extends JpaRepository<genre, Long> {
+public interface genreRepository extends JpaRepository<genre, UUID> {
 
 
     @Query("""
