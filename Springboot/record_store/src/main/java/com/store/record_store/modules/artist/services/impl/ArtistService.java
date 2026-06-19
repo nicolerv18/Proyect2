@@ -30,7 +30,7 @@ public class ArtistService implements IArtistService {
 
     @Override
     public List<ArtistResponseDto> findAll(String filter) {
-       return mapper.toDtoList(data.findByNameContaining(filter));
+        return mapper.toDtoList(data.findByNameContaining(filter));
     }
 
     @Override
