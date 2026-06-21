@@ -7,6 +7,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.MappedSuperclass;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
+import jakarta.persistence.PrePersist;
+import jakarta.persistence.PreUpdate;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.experimental.SuperBuilder;
@@ -33,6 +35,15 @@ public class ABaseEntity {
     @Column(name = "updated_at")
     protected java.time.LocalDateTime updatedAt;
 
-    
-    
+    @PrePersist
+    protected void onCreate() {
+        java.time.LocalDateTime now = java.time.LocalDateTime.now();
+        this.createdAt = now;
+        this.updatedAt = now;
+    }
+
+    @PreUpdate
+    protected void onUpdate() {
+        this.updatedAt = java.time.LocalDateTime.now();
+    }
 }

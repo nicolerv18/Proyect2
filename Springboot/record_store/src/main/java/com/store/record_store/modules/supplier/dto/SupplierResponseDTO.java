@@ -2,6 +2,7 @@ package com.store.record_store.modules.supplier.dto;
 
 import lombok.Data;
 
+import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Data
@@ -12,5 +13,7 @@ public class SupplierResponseDTO {
     private String email;
     private String address;
     private String status;
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 
 }
